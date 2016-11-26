@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		body{margin: 0 auto;position:relative;width: 640px;}
+		.out{width: 640px;height: 1008px;background: url(images/bg01.jpg) 0 0 no-repeat;overflow: hidden;overflow: hidden;z-index: 1;}
+		.img1{margin-top: 60px ;margin-left: 152px;}
+		p{margin-top: 32px;margin-left: 23px;font-size: 25px;color: #829090;line-height: 44px;margin-bottom: 30px;}
+		#ipt1,#ipt2{width: 468px;height: 81px;border: 1px solid #c6cacb;margin-left: 21px;margin-bottom: 6px;font-size: 28px;color: #b3b3b3;}
+		#ipt1{background: url(images/1.jpg) 0 0 no-repeat;padding-left: 130px;}
+		#ipt2{background: url(images/2.jpg) 0 0 no-repeat;padding-left: 130px;}
+		#ipt3,#ipt4,#ipt5{width: 432px;height: 92px;text-align: center;line-height: 92px;border-radius: 12px;background: url(images/btn01.png) center center no-repeat;font-size: 40px;color: #f4fffa;font-weight: bold;font-style: italic;margin-top: 35px;margin-left: 100px;}
+		#guize{width: 640px;height: 1008px;z-index: 10;position: absolute;top: 0;left: 0;display:none;}
+		.bj1{width: 640px;height: 1008px;background: #000;opacity: 0.5;}
+		.zi2{height: 810px;width: 582px;background: #fff;border: 8px solid #01296e;border-radius: 25px;position: absolute;top: 30px;left: 20px;font-size: 25px; }
+		.zi2 h4{font-size: 24px;color:#002a6d; margin-top: 45px;margin-left: 33px;}
+		.zi2 p{margin: 0 32px 0 30px;color: #696969;line-height: 43px;}
+		#ipt4{margin-left: 74px;margin-top: 19px;}
+		#p{margin-top: 27px;font-size: 35px;color: #003aa2;text-decoration: underline;font-weight: bold;font-style: italic;margin-left: 237px;}
+		.p1{font-size: 30px;color: #69645e;margin:44px 0 0 51px;overflow: hidden;}
+		.p1 span{float: left;margin-top: 21px;}
+		#tijiao{width: 640px;height: 1008px;z-index: 10;position: absolute;top: 0;left: 0;display:none;}
+		.tj{height: 496px;width: 582px;background: #fff;border: 8px solid #01296e;border-radius: 25px;position: absolute;top:157px;left: 20px; }
+		.tj h4{font-size: 65px;color: #002870;margin: 70px 0 0 143px;}
+		.tj p{margin-top: 53px;font-size: 35px;}
+		#ipt5{margin-left: 74px;margin-top: 19px;}
+	</style>
+</head>
+<body>
+	<div class="out">
+		<img src="images/qckhj.png" alt="" class="img1">
+		<p>考验人品的时候到了，只要留下您的姓名和联系方式就有机会抽取启辰R30、启辰晨风一年使用权大奖。</p>
+		<input type="text" name="" value="请输入姓名" id="ipt1">
+		<input type="text" name="" value="请输入手机号码" id="ipt2">
+		<input type="button" name="" value="提交" id="ipt3">
+		<p id="p">活动规则</p>
+		<p class="p1">
+			<span>分享好友积攒人品：</span>
+			<img src="images/weixin.png" alt="">
+			<img src="images/xlwb.png" alt="">
+			<img src="images/txwb.png" alt="">
+		</p>
+	</div>
+	<div id="guize">
+		<div class="bj1"></div>
+		<div class="gz">
+			<div class=" zi2">
+				<h4>活动规则:</h4>
+				<p>1、广州车展期间：关注启辰官方微信，参与“码上有礼，辰心放送”活动并留下本人姓名及手机号码，即可参与。</p>
+				<p>2、11月21至11月29日，每天抽取一台启辰R30一年使用权大奖（现场兑奖）。11月29日抽取终极大奖：一台启辰乘风一年使用权</p>
+				<p>3、每天16:00对当天所有参与者进行抽选，抽中的参与者若不在现场，将取消中奖者资格并继续抽奖（启辰晨风一年使用权除外）。</p>
+				<p>4、终极大奖从车展期间所有参与者中抽取，后续联系进行兑奖。</p>
+				<p>5、此活动每人仅限参与一次；</p>
+				<p>6、本活动最终解释权归东风日产启辰所有。</p>
+				<input type="button" name="" value="知道了" id="ipt4">
+				
+			</div>
+		</div>
+	</div>
+	<div id="tijiao">
+		<div class="bj1"></div>
+		<div class="tj">
+			<div class=" tj1">
+				<h4>提交成功</h4>
+				<p>说好的16:00现场抽奖，启辰展台与您不见不散</p>
+				<input type="button" name="" value="不见不散" id="ipt5">
+				
+			</div>
+		</div>
+	</div>
+	<script type='text/javascript' src='jquery-1.8.3.min.js'></script>
+	<script type='text/javascript' src='ort.js'></script>
+	<script>
+		var p=document.getElementById('p');
+		var guize=document.getElementById('guize');
+		var ipt4=document.getElementById('ipt4');
+		ipt4.onclick=function(){
+			guize.style.display='none';
+		}
+		p.onclick=function(){
+			guize.style.display='block';d
+		}
+		var ipt1=document.getElementById('ipt1');
+		var ipt2=document.getElementById('ipt2');
+		ipt1.onfocus=function(){
+			ipt1.value='';
+		}
+		ipt2.onfocus=function(){
+			ipt2.value='';
+		}
+		ipt1.onblur=function(){
+			if (ipt1.value=='') {
+				ipt1.value='请输入姓名';
+			};
+		}
+		ipt2.onblur=function(){
+			if (ipt2.value=='') {
+				ipt2.value='请输入手机号码';
+			};
+		}
+		var ipt3=document.getElementById('ipt3');
+		ipt3.onclick=function(){
+			if (ipt1.value==''||ipt1.value=='请输入姓名'||ipt2.value==''||ipt2.value=='请输入手机号码') {
+					alert('请填写完整');
+			}else{
+				for (var i = 0; i < getcookie().length; i++) {
+					if (ipt2.value==getcookie()[i]) {
+						alert('已经参与完毕');
+						return false;
+					};
+				};
+				var x=Math.random();
+				setcookie('name'+x,ipt1.value,7)
+				setcookie('number'+x,ipt2.value,7)
+				tijiao.style.display='block';
+			}
+		}
+		var tijiao=document.getElementById('tijiao');
+		var ipt5=document.getElementById('ipt5');
+		ipt5.onclick=function(){
+			tijiao.style.display='none';
+		}
+		function setcookie(key,value,day){
+			var date=new Date();
+			date.setDate(date.getDate()+day);
+			document.cookie=key+'='+escape(value)+';expires='+date;
+		}
+		function getcookie(){
+			var arr3=[];
+			var cookies=unescape(document.cookie);
+			var arr1=cookies.split('; ');
+			for (var i = 0; i < arr1.length; i++) {
+				var arr2=arr1[i].split('=');
+				arr3.push(arr2[1]);
+			};
+			return arr3;
+		}
+	</script>
+</body>
+</html>

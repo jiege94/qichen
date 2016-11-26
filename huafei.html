@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		body{margin: 0 auto;position:relative;width: 640px;}
+		.out{width: 640px;height: 1008px;background: url(images/bg01.jpg) 0 0 no-repeat;overflow: hidden;z-index: 1;}
+		h4{font-size: 35px;margin-top:50px;color: #c3002a;text-align: center;}
+		.p1{margin:30px 41px 0 39px;font-size: 30px;margin-top: 30px;color: #65615e;line-height: 39px;}
+		#img1{width: 556px;height: 316px;float: left;margin:17px 41px 0 43px; }
+		.p2{margin: 33px 161px 20px 36px;font-size: 28px;color:#65615e; }
+		#ipt1{background: #fff url(images/2.jpg) 0 0 no-repeat;padding-left: 130px;width: 433px;height: 81px;border: 1px solid #c6cacb;margin-left: 40px;margin-bottom: 6px;font-size: 28px;color: #b3b3b3;}
+		#ipt2{width: 432px;height: 92px;text-align: center;line-height: 92px;border-radius: 12px;background: url(images/btn01.png) center center no-repeat;font-size: 40px;color: #f4fffa;font-weight: bold;font-style: italic;margin-top: 35px;margin-left: 100px;}
+		.p3{font-size: 30px;color: #69645e;margin:44px 0 0 51px;overflow: hidden;}
+		.p3 span{float: left;margin-top: 21px;}
+	</style>
+</head>
+<body>
+	<div class="out">
+		<h4>人品不错哦！</h4>
+		<p class="p1">恭喜您抽中价值<span id='yuan'></span>元的手机话费！请留下联系方式，24小时内话费将为您送上，请留意短信，谢谢！</p>
+		<img src="" alt="" id="img1">
+		<p class="p2">请输入手机号码24小时内为您充值</p>
+		<input type="text" name="" value="" id="ipt1">
+		<input type="button" name="" value="确认提交" id="ipt2">
+		<p class="p3">
+			<span>分享好友积攒人品：</span>
+			<img src="images/weixin.png" alt="">
+			<img src="images/xlwb.png" alt="">
+			<img src="images/txwb.png" alt="">
+		</p>
+	</div>
+	<script type='text/javascript' src='jquery-1.8.3.min.js'></script>
+	<script type='text/javascript' src='ort.js'></script>
+	<script>
+		var arr1=[10,20,30];
+		var yuan=document.getElementById('yuan');
+		
+		var arr=['images/y10.png','images/y20.png','images/y30.png'];
+		var a=Math.floor(Math.random()*arr.length);
+		var img1=document.getElementById('img1');
+		img1.src=arr[a];
+		yuan.innerHTML=arr1[a];
+		var ipt1=document.getElementById('ipt1');
+		var ipt2=document.getElementById('ipt2');
+		ipt2.onclick=function(){
+			if (ipt1.value=='') {
+				alert('请填写号码')
+			}else{
+				for (var i = 0; i < getcookie().length; i++) {
+					if (ipt1.value==getcookie()) {
+						alert('已经参与抽奖');
+					};
+					document.cookie='haoma'+new Date().getTime()+'='+ipt1.value;
+				};
+				document.cookie='canyuguo=cyg';
+			}
+		}
+		function getcookie(){
+			var arr3=[];
+			var cookies=unescape(document.cookie);
+			var arr1=cookies.split('; ');
+			for (var i = 0; i < arr1.length; i++) {
+				var arr2=arr1[i].split('=');
+				arr3.push(arr2[1]);
+			};
+			return arr3;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		body{margin: 0 auto;position:relative;width: 640px;}
+		.out{width: 640px;height: 1008px;background: url(images/bg01.jpg) 0 0 no-repeat;overflow: hidden;text-align: center;z-index: 1;overflow: hidden;}
+		h3{font-size: 50px;color: #042c74;font-weight: bolder;margin-top: 39px;margin-bottom: 16px;}
+		p{font-size: 29px;color: #606968;margin-bottom: 24px;margin-top: 0;}
+	</style>
+</head>
+<body>
+	<div class="out">
+		<img src="images/bg02.jpg" alt="" class="img1">
+		<h3>幸运“触”手可及</h3>
+		<p>轻触任一款启辰车型牌即可参与抽奖</p>
+		<div id="img">
+			<img src="" alt="">
+			<img src="" alt="">
+			<img src="" alt="">
+			<img src="" alt="">
+			<img src="" alt="">
+			<img src="" alt="">
+		</div>
+	</div>
+	<script type='text/javascript' src='jquery-1.8.3.min.js'></script>
+	<script type='text/javascript' src='ort.js'></script>
+	<script>
+		var arr=['images/qc_01.png','images/qc_02.png','images/qc_03.png','images/qc_04.png','images/qc_05.png','images/qc_06.png']
+		var img=document.getElementById('img');
+		var imgs=img.getElementsByTagName('img');
+		for (var i = 0; i < imgs.length; i++) {
+			imgs[i].src=arr[i];
+			imgs[i].onclick=function(){
+				if (getcookie('canyuguo')) {
+					window.open('henbaoqian.html');
+				}else{
+					var a=Math.floor(Math.random()*arr.length);
+		            if (imgs[a]==this) {
+		         		window.open('zhongjiang.html');
+					}else{
+						alert('很抱歉，未抽中');
+					}
+				}
+				document.cookie='canyuguo=cyg';
+			}
+		};
+		function getcookie(key){
+			var cookies=unescape(document.cookie);
+			var arr1=cookies.split('; ');
+			for (var i = 0; i < arr1.length; i++) {
+				var arr2=arr1[i].split('=');
+				if (arr2[0]==key) {
+					return arr2[1];
+				};
+			};
+		}
+	</script>
+</body>
+</html>

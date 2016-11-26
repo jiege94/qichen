@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		body{margin: 0 auto;position:relative;width: 640px;}
+		.out{width: 640px;height: 1008px;background: url(images/bg01.jpg) 0 0 no-repeat;overflow: hidden;z-index: 1;overflow: hidden;z-index: 1;}
+		h3{font-size: 40px;color: #00266a;font-weight: bold;margin-top: 35px;margin-bottom: 20px;margin-left: 23px;}
+		.con{width: 596px;height: 480px;background: #fff;margin: 0 auto;overflow: hidden;position: relative;text-align: center;}
+		.con p{margin: 18px auto 22px;font-size: 25px;color: #636363;}
+		.img2{margin-top: 40px;}
+		#daima{position: absolute;top: 93px;left: 126px;}
+		#daima span{float: left;width: 30px;height: 30px;line-height: 30px;font-size: 30px;margin-right: 52px;font-weight: bold;color: #fff;}
+		h4{text-align: left;margin: 21px auto 16px;font-size: 30px;color: #012869;margin-left: 30px;font-weight: bold;}
+		.p{font-size: 24px;color: #696f6f;line-height: 36px;margin-left: 30px;margin-top: 0;}
+		input{width: 432px;height: 92px;text-align: center;line-height: 92px;margin-bottom: 20px;border-radius: 12px;background: url(images/btn01.png) center center no-repeat;font-size: 40px;color: #f4fffa;font-weight: bold;font-style: italic;margin-left: 100px;}
+		.p1{font-size: 30px;color: #69645e;margin:0 0 0 51px;overflow: hidden;}
+		.p1 span{float: left;margin-top: 21px; }
+		#fenxiang{width: 640px;height: 1008px;z-index: 10;position: absolute;top: 0;left: 0;display:block;}
+		.bj1{width: 640px;height: 1008px;background: #000;opacity: 0.5;}
+		.dianji{position: absolute;top: 278px;left: 132px;color: #fff;text-align: center;font-size: 46px;line-height: 86px;}
+		.dianji p{margin: 0;}
+		
+	</style>
+</head>
+<body>
+	<div class="out">
+		<h3>恭喜您，启辰车模已经属于您了！</h3>
+		<div class="con">
+			<p>请保持在本页面，凭页面代码到展台领取礼品</p>
+			<img src="images/bg03.jpg" alt="" class="img1">
+			<img src="images/qc_07.jpg" alt="" class="img2">
+			<div id="daima">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<h4>不够过瘾？</h4>
+		<p class="p">那么请留下您的联系方式，就有机会抽取启辰启辰R30晨风一年使用权大奖哦！</p>
+		<a href="kaihuijia.html"><input type="button" name="" value="启辰开回家" id="ipt1"></a>
+		<p class="p1">
+			<span>分享好友积攒人品：</span>
+			<img src="images/weixin.png" alt="">
+			<img src="images/xlwb.png" alt="">
+			<img src="images/txwb.png" alt="">
+		</p>
+	</div>
+	<div id="fenxiang">
+		<div class="bj1"></div>
+		<div class="dianji">
+			<p>点击右上角按钮</p>
+			<p>即可分享至朋友圈</p>
+		</div>
+	</div>
+	<script type='text/javascript' src='jquery-1.8.3.min.js'></script>
+	<script type='text/javascript' src='ort.js'></script>
+	<script>
+		var daima=document.getElementById('daima');
+		var span=daima.getElementsByTagName('span');
+		var arr1=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+		var arr2=['0','1','2','3','4','5','6','7','8','9'];
+		for (var i = 0; i < 2; i++) {
+			var a1=Math.floor(Math.random()*arr1.length);
+			span[i].innerHTML=arr1[a1];
+		}
+		for (var i = 2; i < span.length; i++) {
+			var a2=Math.floor(Math.random()*arr2.length);
+			span[i].innerHTML=arr2[a2];
+		}
+		document.cookie='daima+'+new Date().getTime()+'='+daima.innerText;
+		var fenx=document.getElementById('fenxiang');
+		fenx.onclick=function(){
+			fenx.style.display='none';
+		}
+
+	</script>	
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		body{margin: 0 auto;position:relative;width: 640px;}
+		.out{width: 640px;height: 1008px;background: url(images/bg01.jpg) 0 0 no-repeat;overflow: hidden;text-align: center;z-index: 1;}
+		.img1{width: 640px;height: 271px;}
+		.img2{width: 509px;height: 198px;margin-top: 30px;}
+		.ipt{margin: 52px auto 0;}
+		input{width: 432px;height: 92px;text-align: center;line-height: 92px;margin-bottom: 20px;border-radius: 12px;background: url(images/btn01.png) center center no-repeat;font-size: 40px;color: #f4fffa;font-weight: bold;font-style: italic;}
+		#p{margin-top: 14px;font-size: 35px;color: #003aa2;text-decoration: underline;font-weight: bold;font-style: italic;}
+		#xianchang{width: 640px;height: 1008px;z-index: 10;position: absolute;top: 0;left: 0;display: none;}
+		.bj1{width: 640px;height: 1008px;background: #000;opacity: 0.3;}
+		.zi1{width: 584px;height: 524px;background: #fff;border: 8px solid #01296e;border-radius: 25px;position: absolute;top: 140px;left: 20px;text-align: center;}
+		.p1{margin-top: 48px;}
+		.zi1 p{font-size: 40px;color: #002a6d;font-weight: bold;line-height: 62px;}
+		#huodong{width: 640px;height: 1008px;z-index: 10;position: absolute;top: 0;left: 0;display: none;}
+		.zi2{height: 708px;width: 584px;background: #fff;border: 8px solid #01296e;border-radius: 25px;position: absolute;top: 140px;left: 20px;font-size: 25px; }
+		.zi2 h4{font-size: 27px;color:#002a6d; margin-top: 45px;margin-left: 33px;}
+		.zi2 p{margin: 0 38px 0 33px;text-indent: 50px;color: #696969;line-height: 43px;}
+		#ipt5{margin-left: 74px;}
+	</style>
+</head>
+<body>
+	<div class="out">
+		<img src="images/bg02.jpg" alt="" class="img1">
+		<img src="images/msyl.png" alt="" class="img2">
+		<div class="ipt">
+			<input type="button" name="" value="我在车展 马上拿奖" id="ipt1">
+			<input type="button" name="" value="不在现场 试试手气" id="ipt2">
+			<p id="p">活动说明</p>
+		</div>
+	</div>	
+	<div id="xianchang">
+		<div class="bj1"></div>
+		<div class="zi1">
+			<p class="p1">请确认你是否在车展现场，</p>
+			<p>以免无法抽奖，</p>
+			<p>不在车展现场还可抽取话费哦！</p>
+			<a href="choujiang.html"><input type="button" name="" value="确定" id="ipt3"></a>
+			<input type="button" name="" value="重新选择" id="ipt4">
+		</div>
+	</div>
+	<div id="xianchang">
+		<div class="bj1"></div>
+		<div class="zi1">
+			<p class="p1">请确认你是否在车展现场，</p>
+			<p>以免无法抽奖，</p>
+			<p>不在车展现场还可抽取话费哦！</p>
+			<input type="button" name="" value="确定" id="ipt3">
+			<input type="button" name="" value="重新选择" id="ipt4">
+		</div>
+	</div>
+	<div id="huodong">
+		<div class="bj1"></div>
+		<div class=" zi2">
+			<h4>活动说明:</h4>
+			<p>抽奖活动哪家强，东风日产看星辰，广州车展期间，齐晨君为您准备了多彩铅笔套装，购车代金券、晨风车模、手机话费等精美礼品；</p>
+			<p>车展现场参与活动的用户百分百中奖、留下联系方式更有机会赢取启辰R30、启辰晨风一年使用权大奖；场外用户参与活动也有机会获得话费充值大奖。</p>
+			<p>心动了吗？妈就马上行动吧！</p>
+			<p>参与车展现场抽奖活动，中奖礼品只限当天在启辰展台现场兑奖、过时不候哦，详情请咨询启辰站台工作人员。</p>
+			<input type="button" name="" value="马上抽奖" id="ipt5">
+		</div>
+	</div>	
+	<script type='text/javascript' src='jquery-1.8.3.min.js'></script>
+	<script type='text/javascript' src='ort.js'></script>
+	<script>
+		var ipt1=document.getElementById('ipt1');
+		var ipt2=document.getElementById('ipt2');
+		var ipt3=document.getElementById('ipt3');
+		var ipt4=document.getElementById('ipt4');
+		var p=document.getElementById('p');
+		var xianchang=document.getElementById('xianchang');
+		ipt1.onclick=function(){
+			if (getcookie('canyuguo')) {
+				alert('已经参与抽奖');
+			}else{
+
+				xianchang.style.display='block';
+			}
+		}
+		ipt2.onclick=function(){
+			if (getcookie('canyuguo')) {
+				alert('已经参与抽奖');
+			}else{
+				var a=Math.floor(Math.random()*100)+1;
+				if (a==88) {
+					window.open('huafei.html');
+				}else{
+					window.open('haoxinsai.html');
+					document.cookie='canyuguo=cyg';
+				}
+			}
+			
+		}
+		p.onclick=function(){
+			huodong.style.display='block';
+		}
+		ipt5.onclick=function(){
+			huodong.style.display='none';
+		}
+		ipt4.onclick=function(){
+			xianchang.style.display='none'
+		}	
+		function getcookie(key){
+			var cookies=unescape(document.cookie);
+			var arr1=cookies.split('; ');
+			for (var i = 0; i < arr1.length; i++) {
+				var arr2=arr1[i].split('=');
+				if (arr2[0]==key) {
+					return arr2[1];
+				};
+			};
+		}
+	</script>
+</body>
+</html>
